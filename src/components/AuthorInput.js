@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { addAuthor } from '../actions';
-import uuid from 'uuid';
-import { connect } from 'react-redux';
+import React, {Component} from 'react'
+import {addAuthor} from '../actions'
+import uuid from 'uuid'
+import {connect} from 'react-redux'
 
 export class AuthorInput extends Component {
 
@@ -12,17 +12,17 @@ export class AuthorInput extends Component {
   handleOnChange = event => {
     this.setState({
       [event.target.name]: event.target.value
-    });
+    })
   }
 
 
   handleOnSubmit = event => {
-    event.preventDefault();
-    const author = {...this.state, id: uuid() };
-    this.props.addAuthor(author);
+    event.preventDefault()
+    const author = {...this.state, id: uuid()}
+    this.props.addAuthor(author)
     this.setState({
       authorName: ''
-    });
+    })
   }
 
   render() {
@@ -34,12 +34,12 @@ export class AuthorInput extends Component {
             onChange={(event) => this.handleOnChange(event)}
             name="authorName"
             value={this.state.authorName}
-            placeholder="author name" />
+            placeholder="author name"/>
         </p>
-        <input type="submit" />
+        <input type="submit"/>
       </form>
-    );
+    )
   }
-};
+}
 
-export default connect(null, { addAuthor })(AuthorInput);
+export default connect(null, {addAuthor})(AuthorInput)

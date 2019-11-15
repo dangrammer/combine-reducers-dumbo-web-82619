@@ -310,7 +310,7 @@ function authorsReducer(state = [], action) {
   let idx;
   switch (action.type) {
     case "ADD_AUTHOR":
-      return [...state, action.author];
+      return;
 
     case "REMOVE_AUTHOR":
       idx = state.findIndex(book => book.id === action.id);
@@ -328,7 +328,7 @@ function authorsReducer(state = [], action) {
 
     default:
       return state;
-  }
+  } 
 }
 ```
 
